@@ -1,1 +1,30 @@
-<p>listing works!</p>
+<div class="container">
+<div class="table-responsive">
+<table class="table table-dark">
+    <thead>
+        <th>{{'LISTING.F_NAME' | translate}}</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Status</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contacts">
+            <td>{{contact.fName}}</td>
+            <td>{{contact.lName}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.mobile}}</td>
+            <td>{{contact.status ? 'active' : 'inactive'}}</td>
+            <td>
+                <a (click)="viewContact(contact)" class="pr-3" href="javascript: void(0);">View Contact</a>
+                <i (click)="deleteContact(contact)" class="fas fa-trash-alt" *ngIf="contact.status"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="btn-container">
+    <button class="btn btn-primary" (click)="createContact()">Create New Contact</button>
+</div>
+</div>

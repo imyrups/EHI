@@ -3,10 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [{
-  path: '/contacts',
+  path: 'contacts',
   loadChildren: () => import('./contacts/contacts.module').then(m => m.ContactsModule)
 }, {
-  path: '/', pathMatch: 'full', redirectTo: '/contacts'
+  path: '', pathMatch: 'full', redirectTo: 'contacts'
 }];
 
 @NgModule({

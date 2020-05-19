@@ -1,0 +1,9 @@
+{
+    "LISTING": {
+        "F_NAME": "First Name",
+        "L_NAME": "Last Name",
+        "EMAIL": "Email",
+        "MOBILE": "Phone Number",
+        "STATUS": "Status"
+    }
+}
