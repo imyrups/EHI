@@ -4,13 +4,15 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SharedService } from './shared.service';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/','.json');
 }
 
 @NgModule({
-  declarations: [],
+  declarations: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -23,6 +25,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
   ],
   providers: [SharedService],
-  exports: [TranslateModule]
+  exports: [TranslateModule, HeaderComponent, FooterComponent]
 })
 export class SharedModule { }

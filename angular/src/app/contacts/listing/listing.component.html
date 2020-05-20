@@ -3,10 +3,10 @@
 <table class="table table-dark">
     <thead>
         <th>{{'LISTING.F_NAME' | translate}}</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Phone Number</th>
-        <th>Status</th>
+        <th>{{'LISTING.L_NAME' | translate}}</th>
+        <th>{{'LISTING.EMAIL' | translate}}</th>
+        <th>{{'LISTING.MOBILE' | translate}}</th>
+        <th>{{'LISTING.STATUS' | translate}}</th>
         <th></th>
     </thead>
     <tbody>
@@ -17,7 +17,7 @@
             <td>{{contact.mobile}}</td>
             <td>{{contact.status ? 'active' : 'inactive'}}</td>
             <td>
-                <a (click)="viewContact(contact)" class="pr-3" href="javascript: void(0);">View Contact</a>
+                <a (click)="viewContact(contact)" class="pr-3" href="javascript: void(0);">{{'BUTTONS.VIEW' | translate}}</a>
                 <i (click)="deleteContact(contact)" class="fas fa-trash-alt" *ngIf="contact.status"></i>
             </td>
         </tr>
@@ -25,6 +25,6 @@
 </table>
 </div>
 <div class="btn-container">
-    <button class="btn btn-primary" (click)="createContact()">Create New Contact</button>
+    <button class="btn btn-primary" (click)="createContact()">{{'BUTTONS.CREATE' | translate}}</button>
 </div>
 </div>

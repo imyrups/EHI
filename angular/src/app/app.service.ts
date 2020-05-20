@@ -20,7 +20,14 @@ export class AppService {
   constructor() { }
 
   public addContact(contact) {
-
+    const obj: any = {};
+    obj.id = 2;
+    obj.status = true;
+    obj.fName = contact.fName;
+    obj.lName = contact.lName;
+    obj.email = contact.email;
+    obj.mobile = contact.mobile;
+    this.contactList.push(obj);
   }
 
   public deleteContact(id) {

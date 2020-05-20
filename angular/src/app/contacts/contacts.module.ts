@@ -4,7 +4,7 @@ import { ListingComponent } from './listing/listing.component';
 import { ContactsRoutingModule } from './contacts-routing.module';
 import { CreateComponent } from './create/create.component';
 import { SharedModule } from '../shared/shared.module';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,6 +12,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
     ContactsRoutingModule
   ]
 })

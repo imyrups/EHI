@@ -5,5 +5,12 @@
         "EMAIL": "Email",
         "MOBILE": "Phone Number",
         "STATUS": "Status"
+    },
+    "CREATE": {
+
+    },
+    "BUTTONS": {
+        "CREATE": "Create New Contact",
+        "VIEW": "View Contact"
     }
 }
