@@ -34,7 +34,7 @@ export class CreateComponent implements OnInit {
       fName: [obj ? obj.fName : '', Validators.required],
       lName: [obj ? obj.lName: '', Validators.required],
       email: [obj ? obj.email: '', Validators.required],
-      mobile: [obj ? obj.mobile: '', Validators.required]
+      mobile: [obj ? obj.mobile: '', Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])]
     });
   }
 

@@ -23,14 +23,15 @@
         </div>
         <div class="col-6 mb-3">
             <label for="">Phone Number</label>
-            <input type="number" class="form-control" [ngClass]="{'invalid': mobile.touched && mobile.errors}" [formControl]="mobile">
+            <input type="number" class="form-control" minlength="10" maxlength="10"
+             [ngClass]="{'invalid': mobile.touched && mobile.errors}" [formControl]="mobile">
             <div *ngIf="mobile.touched && mobile.errors" class="error">
                 Please enter phone number.
             </div>
         </div>
     </form>
-    <div class="row btn-container float-right">
-        <button class="btn btn-primary mr-3" (click)="submit()">{{this.id ? 'Edit' : 'Create'}}</button>
+    <div class="row btn-container justify-content-end">
+        <button class="btn btn-outline-primary mr-3" (click)="submit()">{{this.id ? 'Edit' : 'Create'}}</button>
         <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
     </div>
 </div>
