@@ -2,32 +2,48 @@
     <form class="row" [formGroup]="formGroup">
         <div class="col-6 mb-3">
             <label for="">First Name</label>
-            <input type="text" class="form-control" [ngClass]="{'invalid': fName.touched && fName.errors}" [formControl]="fName">
+            <input type="text" class="form-control" [ngClass]="{'invalid': fName.touched && fName.errors}"
+                [formControl]="fName">
             <div *ngIf="fName.touched && fName.errors" class="error">
                 Please enter first name.
             </div>
         </div>
         <div class="col-6 mb-3">
             <label for="">Last Name</label>
-            <input type="text" class="form-control" [ngClass]="{'invalid': lName.touched && lName.errors}" [formControl]="lName">
+            <input type="text" class="form-control" [ngClass]="{'invalid': lName.touched && lName.errors}"
+                [formControl]="lName">
             <div *ngIf="lName.touched && lName.errors" class="error">
                 Please enter last name.
             </div>
         </div>
         <div class="col-6 mb-3">
             <label for="">Email</label>
-            <input type="text" class="form-control" [ngClass]="{'invalid': email.touched && email.errors}" [formControl]="email">
-            <div *ngIf="email.touched && email.errors" class="error">
-                Please enter email.
-            </div>
+            <input type="text" class="form-control" [ngClass]="{'invalid': email.touched && email.errors}"
+                [formControl]="email">
+            <ng-container *ngIf="email.touched && email.errors">
+                <div *ngIf="email.errors.required" class="error">
+                    Please enter email.
+                </div>
+                <div *ngIf="email.errors.pattern" class="error">
+                    Please enter a valid email.
+                </div>
+            </ng-container>
         </div>
         <div class="col-6 mb-3">
             <label for="">Phone Number</label>
             <input type="number" class="form-control" minlength="10" maxlength="10"
-             [ngClass]="{'invalid': mobile.touched && mobile.errors}" [formControl]="mobile">
-            <div *ngIf="mobile.touched && mobile.errors" class="error">
-                Please enter phone number.
-            </div>
+                [ngClass]="{'invalid': mobile.touched && mobile.errors}" [formControl]="mobile">
+            <ng-container *ngIf="mobile.touched && mobile.errors">
+                <div *ngIf="mobile.errors.required" class="error">
+                    Please enter phone number.
+                </div>
+                <div *ngIf="mobile.errors.min" class="error">
+                    Phone number should be of minimum 10 digits.
+                </div>
+                <div *ngIf="mobile.errors.max" class="error">
+                    Phone number should be of maximum 10 digits.
+                </div>
+            </ng-container>
         </div>
     </form>
     <div class="row btn-container justify-content-end">

@@ -33,8 +33,8 @@ export class CreateComponent implements OnInit {
     this.formGroup = this.fb.group({
       fName: [obj ? obj.fName : '', Validators.required],
       lName: [obj ? obj.lName: '', Validators.required],
-      email: [obj ? obj.email: '', Validators.required],
-      mobile: [obj ? obj.mobile: '', Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])]
+      email: [obj ? obj.email: '', Validators.compose([Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")])],
+      mobile: [obj ? obj.mobile: '', Validators.compose([Validators.required, Validators.min(1000000000), Validators.max(9999999999)])]
     });
   }
 
