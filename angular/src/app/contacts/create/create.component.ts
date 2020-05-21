@@ -69,7 +69,7 @@ export class CreateComponent implements OnInit {
       }
       if(this.id) { 
         this.appService.modifyContact(this.id, obj)
-        this.cancel;
+        this.cancel();
       } else {
         this.appService.addContact(obj)
         this.cancel();
